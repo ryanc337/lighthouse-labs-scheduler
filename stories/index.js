@@ -115,13 +115,22 @@ storiesOf("DayList", module)
       .add("Initial", () => (
         <InterviewerList
           interviewers={interviewers}
-          setInterviewer={action("setInterviewer")}
+          // setInterviewer={action("setInterviewer")}
+          setInterviewer={event => props.onChange(interviewer.id)}
         />
       ))
       .add("Preselected", () => (
         <InterviewerList
           interviewers={interviewers}
           interviewer={3}
-          setInterviewer={action("setInterviewer")}
+          // setInterviewer={action("setInterviewer")}
+          setInterviewer={event => props.onChange(interviewer.id)}
         />
       ));
+    
+    storiesOf("Appointment", module)
+      .addParameters({
+        backgrounds: [{ name: "white", value: "#fff", default: true }]
+      }) 
+      .add("Appointment", () => <Appointment />)
+      .add("Appointment with Time", () => <Appointment time="12pm" />);
