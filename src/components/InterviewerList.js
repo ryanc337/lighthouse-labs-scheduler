@@ -5,11 +5,7 @@ const classNames = require("classnames");
 
 export default function InterviewerList(props) {
   console.log("interviewList", props)
-  const InterviewerClass = classNames("interviewers", {
-    "interviewers__header": true,
-    "interviewers__list": true,  
-    "text--light": true
-  });
+
 
   const interviewers = props.interviewers.map((interviewer) => {
     console.log("inside map", interviewer);
@@ -23,10 +19,8 @@ export default function InterviewerList(props) {
     )
   })
 
-return (<section className={InterviewerClass}>
-    <h4>Interviewer</h4>
-    <ul>
-      {interviewers}
-    </ul>
-  </section>)
+return (<section className="interviewers">
+<h4 className="interviewers__header text--light">Interviewer</h4>
+<ul className="interviewers__list">{interviewers}</ul>
+</section>)
 }

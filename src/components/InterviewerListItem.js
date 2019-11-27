@@ -5,11 +5,8 @@ const classNames = require("classnames");
 
 export default function InterviewerListItem(props) {
   // console.log("interviewListItem", props)
-  const InterviewerClass = classNames("interviewers", {
-    "interviewers__item": true,
-    "interviewers-image": true,
-    "interviewers--selected": true,
-    "interviewers--selected-image": true
+  const InterviewerClass = classNames("interviewers__item", {
+    "interviewers__item--selected": props.selected,
   });
 
   return (
