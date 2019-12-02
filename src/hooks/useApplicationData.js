@@ -20,9 +20,9 @@ export default function useApplicationData() {
   useEffect(() => {
     let daysUrl = "/api/days";
     let appsUrl = "/api/appointments";
-    let interviewersUrl = "/api/interviewers"
+    let interviewersUrl = "/api/interviewers";
   
-    const promiseDays = axios.get(daysUrl)
+    const promiseDays = axios.get(daysUrl);
     const promiseApps = axios.get(appsUrl);
     const promiseInts = axios.get(interviewersUrl);
 
@@ -32,7 +32,7 @@ export default function useApplicationData() {
   }, [])
 
   function bookInterview(id, interview) {
-    console.log(id, interview);
+    // console.log(id, interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
