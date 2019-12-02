@@ -7,8 +7,8 @@ import { restElement } from "@babel/types";
 export default function Form(props) {
   const [interviewer, setInterviewer ] = useState(props.interviewer || null);
   const [name, setName] = useState(props.name || "")
-  console.log(props.onCancel);
 
+  console.log(props.onSave)
   function reset() {
     setName("");
     setInterviewer(null);
@@ -35,7 +35,7 @@ return(<main className="appointment__card appointment__card--create">
   <section className="appointment__card-right">
     <section className="appointment__actions">
       <Button onClick={cancel} danger>Cancel</Button>
-      <Button onClick={props.onSave} confirm>Save</Button>
+      <Button onClick={() => props.onSave(name, interviewer)} confirm>Save</Button>
     </section>
   </section>
 </main>)
