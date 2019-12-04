@@ -1,5 +1,6 @@
 import React from "react";
 import "./DayListItem.scss";
+import useApplicationData from "hooks/useApplicationData";
 // import { format } from "path";
 const classNames = require("classnames");
 
@@ -17,7 +18,7 @@ export default function DayListItem(props) {
   });
 
   return (
-    <li className={dayClass} onClick={() => props.setDay(props.name)}>
+    <li className={dayClass} onClick={() => props.setDay(props.name)} data-testid="day">
       <h2>{props.name}</h2>
       <h3>{formatSpots(props)}</h3>
     </li>

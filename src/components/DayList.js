@@ -1,8 +1,10 @@
 import React from "react";
 import DayListItem from "./DayListItem";
+import useApplicationData from "hooks/useApplicationData";
 
-export default function DayList(props) {
+export default function DayList(props) { 
   const Days = props.days.map((day) => {
+    console.log(props.day);
     return (
       <DayListItem 
       key={day.id}
