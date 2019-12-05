@@ -2,6 +2,8 @@
 
 A Front-End React application to practice the fundamentals of the framework.
 
+!["A user visits / to save and book and interview"](https://github.com/ryanc337/lighthouse-labs-scheduler/blob/master/docs/Interview-Scheduler.png?raw=true)
+
 ## Setup
 
 Install dependencies with `npm install`.
