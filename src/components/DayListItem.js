@@ -1,7 +1,5 @@
 import React from "react";
 import "./DayListItem.scss";
-import useApplicationData from "hooks/useApplicationData";
-// import { format } from "path";
 const classNames = require("classnames");
 
 

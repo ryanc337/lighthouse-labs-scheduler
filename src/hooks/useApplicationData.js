@@ -1,6 +1,5 @@
 import { useEffect, useReducer } from "react";
 import axios from "axios";
-import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "../helpers/selectors";
 import reducer, {
   SET_DAY,
   SET_APPLICATION_DATA,
@@ -32,7 +31,6 @@ export default function useApplicationData() {
   }, [])
 
   function bookInterview(id, interview) {
-    // console.log(id, interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
