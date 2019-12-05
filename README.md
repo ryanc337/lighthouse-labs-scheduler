@@ -1,5 +1,7 @@
 # Interview Scheduler
 
+A Front-End React application to practice the fundamentals of the framework.
+
 ## Setup
 
 Install dependencies with `npm install`.
