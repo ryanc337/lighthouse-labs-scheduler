@@ -25,32 +25,21 @@ export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
+// Added Callbacks to book interview & CancelInterview to avoid .then of undefined Error
   function save(name, interviewer) {
     const interview = {
       student: name,
       interviewer
     };
-    transition(SAVING);
-    const saving = props.bookInterview(props.id, interview);
-    if (saving === undefined) {
-      setTimeout(() => {
-        transition(SHOW);
-      }, 1000)
-    } else {
-      transition(ERROR_SAVE, true);
-    }
+    transition(SAVING)
+    props
+    .bookInterview(props.id, interview, transition, SHOW, ERROR_SAVE)
 }
-function deleteApp() {
-  transition(DELETING, true);
-    const deleting = props.cancelInterview(props.id);
-    if (deleting === undefined) {
-      setTimeout(() => {
-        transition(EMPTY);
-      }, 1000)
-    } else {
-      transition(ERROR_DELETE, true);
-    }
-
+  function deleteApp() {
+    transition(DELETING);
+    props
+    .cancelInterview(props.id, transition, EMPTY, ERROR_DELETE)
 }
   return (
     <article className="appointment" data-testid="appointment">
