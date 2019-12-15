@@ -95,7 +95,6 @@ describe("Application", () => {
      debug();
      fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
      fireEvent.click(getByText(appointment, "Save"));
-     console.log(prettyDOM(appointment));
   })
   it("shows the save error when failing to save an appointment", () => {
     axios.put.mockRejectedValueOnce();

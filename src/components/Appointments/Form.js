@@ -16,7 +16,6 @@ export default function Form(props) {
     props.onSave(name, interviewer);
   }
 
-  console.log(props.onSave)
   function reset() {
     setName("");
     setInterviewer(null);
